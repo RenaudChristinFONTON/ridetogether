@@ -5,6 +5,7 @@ import Onboarding from 'react-native-onboarding-swiper';
 import { useRouter } from 'expo-router';
 import { FlatList } from 'react-native-reanimated/lib/typescript/Animated';
 import { LinearGradient } from 'expo-linear-gradient'
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default function OnboardingScreen() {
   const router = useRouter();
@@ -19,22 +20,22 @@ export default function OnboardingScreen() {
     router.push('/onboarding/index3');
   };
   const loginorsuscribe = () => {
+    const handleDone = () => {
+      AsyncStorage.setItem('hasSeenOnboarding', 'true');
+      router.replace('/(auth)/login');
+    };
     router.push('/(auth)/loginorsuscribe');
   };
   
   return (
-    <LinearGradient 
-    colors={['rgb(167, 17, 17)', 'rgb(199, 161, 161)']}
-    start={{ x: 0, y: 0 }}
-      end={{ x: 1, y: 1 }}>
       <View 
         style={styles.container}>
       <Image
-        source={require('@/assets/images/onboarding3.png')}
+        source={require('@/assets/images/onboarding3.jpg')}
         style={styles.image}
       />
       <Text style={styles.title}>
-        Trouvez des Trajets Publiés
+        Trouvez des Trajets Publiés qui vous conviennent
       </Text>
       <Text style={styles.subtitle}>
         We Can Ride Together
@@ -62,15 +63,14 @@ export default function OnboardingScreen() {
               </Text>
         </TouchableOpacity>
     </View>
-    </LinearGradient>
   )
 
 }
 
 const styles = StyleSheet.create({
   image: {
-    width: 500,
-    height: 500,
+    width: 250,
+    height: 250,
     resizeMode: 'contain'
   },
   container: {
@@ -82,7 +82,7 @@ const styles = StyleSheet.create({
   },
   title: {
     marginTop: 0,
-    fontSize: 50,
+    fontSize: 35,
     fontWeight: 'bold', // texte en gras
     textAlign: 'center',
     color: '#000',
@@ -97,7 +97,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',       // Aligne les éléments horizontalement
     justifyContent: 'space-around', // Espace les boutons de façon égale
     alignItems: 'center',       // Aligne verticalement au centre
-    padding: 60,
+    margin: 15,
   },
   button: {
     margin:20,

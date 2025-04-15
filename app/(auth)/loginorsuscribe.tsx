@@ -26,16 +26,16 @@ export default function OnboardingScreen() {
       />
         </View>
         <TouchableOpacity
-          style={styles.nextbutton} onPress={login}>
+          style={styles.button} onPress={login}>
             <Text
-              style={styles.continuer}>
+              style={styles.buttontext}>
                 Se Connecter
               </Text>
         </TouchableOpacity>
         <TouchableOpacity
-          style={styles.nextbutton} onPress={suscribe}>
+          style={styles.button} onPress={suscribe}>
             <Text
-              style={styles.continuer}>
+              style={styles.buttontext}>
                 S'inscrire
               </Text>
         </TouchableOpacity>
@@ -50,23 +50,23 @@ const styles = StyleSheet.create({
 
   },
   image: {
-    width: 500,
-    height: 500,
+    width: 250,
+    height: 250,
     resizeMode: 'contain'
   },
   container: {
     flex: 1,
     justifyContent: 'center', // centre verticalement
     alignItems: 'center',     // centre horizontalement
-    backgroundColor: '#fff',
+    backgroundColor: 'rgba(0, 0, 0, 0.85)',
     padding: 1,
   },
-  title: {
+  buttontext: {
     marginTop: 0,
-    fontSize: 50,
+    fontSize: 20,
     fontWeight: 'bold', // texte en gras
     textAlign: 'center',
-    color: '#000',
+    color: 'rgb(0, 0, 0)',
   },
   subtitle: {
     marginTop: 0,
@@ -81,36 +81,13 @@ const styles = StyleSheet.create({
     margin: 15,
   },
   button: {
+    justifyContent: 'center',
     margin:20,
-    width: 20,
-    height: 20,
+    width: '50%',
+    height: '5%',
     borderRadius: 50,
-    backgroundColor: 'rgb(0, 0, 0)',
-    borderColor: 'rgb(0,0,0)',
-    opacity: 0.5,
-  },
-  buttonon: {
-    margin:20,
-    width: 20,
-    height: 20,
-    borderRadius: 50,
-    backgroundColor: 'rgb(0, 0, 0)',
+    backgroundColor: 'rgb(255, 255, 255)',
     borderColor: 'rgb(0,0,0)',
     opacity: 1,
-  },
-  nextbutton: {
-    width: 250,
-    height: 50,
-    borderStyle: 'solid',
-    borderColor: 'rgb(0,0,0)',
-    backgroundColor: 'rgb(0,0,0)',
-    borderRadius: 25,
-  },
-  continuer: {
-    color: 'rgb(255,255,255)',
-    fontWeight: 'bold',
-    fontSize: 25,
-    textAlign: 'center',
-    marginTop: 5,
   }
 });

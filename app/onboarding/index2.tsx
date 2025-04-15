@@ -60,8 +60,8 @@ export default function OnboardingScreen() {
 
 const styles = StyleSheet.create({
   image: {
-    width: 500,
-    height: 500,
+    width: 250,
+    height: 250,
     resizeMode: 'contain'
   },
   container: {
@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
   },
   title: {
     marginTop: 0,
-    fontSize: 50,
+    fontSize: 35,
     fontWeight: 'bold', // texte en gras
     textAlign: 'center',
     color: '#000',
